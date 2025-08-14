@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>SEEBIRDEARN</title>
+  <meta name="description" content="SEEBIRDEARN - Earn by joining TG channels, clicking ads, daily check-in." />
+  <link rel="stylesheet" href="styles.css">
+  <!-- Telegram Login Widget JS -->
+  <script async src="https://telegram.org/js/telegram-widget.js?15" data-telegram-login="__BOT_USERNAME__" data-size="large" data-userpic="true" data-request-access="write"></script>
+</head>
+<body>
+  <div class="wrap">
+    <header class="topbar">
+      <h1>SEEBIRDEARN</h1>
+      <div id="user-area" class="user-area">
+        <!-- Telegram login button will render here automatically -->
+      </div>
+    </header>
+
+    <main class="container">
+      <section class="card stats">
+        <div class="left">
+          <div class="label">Balance</div>
+          <div id="balance" class="big">0</div>
+          <div class="muted">points (bananas31)</div>
+        </div>
+        <div class="right" id="profile-block" style="display:none">
+          <img id="tg-photo" class="avatar" src="" alt="avatar">
+          <div id="tg-name" class="name"></div>
+          <div id="tg-id" class="muted small"></div>
+        </div>
+      </section>
+
+      <section class="card actions">
+        <h3>Tasks</h3>
+        <div class="task">
+          <button id="checkin-btn" class="btn">Daily Check-in (+1)</button>
+          <div id="checkin-msg" class="muted small"></div>
+        </div>
+
+        <div class="task">
+          <h4>Telegram Join Tasks</h4>
+          <div class="tg-links">
+            <a class="tg-link" href="https://t.me/seebirdearn" target="_blank">Join SEEBIRDEARN (+1)</a>
+            <a class="tg-link" href="https://t.me/seebirdearnbg" target="_blank">Join SEEBIRDEARN BG (+1)</a>
+          </div>
+          <button id="claim-tg" class="btn">Mark Joined & Claim</button>
+        </div>
+
+        <div class="task">
+          <h4>Ads Task (100 clicks/day)</h4>
+          <div class="muted small">Sequence: 1 → 2 → 3 → 4 → 1 …</div>
+          <div class="ad-links" id="ad-links"></div>
+          <div class="mt">
+            <button id="open-ad" class="btn">Open Ad & Earn +1</button>
+            <div id="ad-remaining" class="muted small"></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="card withdraw">
+        <h3>Withdraw</h3>
+        <div class="field"><label>Amount</label><input id="w-amount" type="number" value="100" min="100"></div>
+        <div class="field"><label>Wallet / Account</label><input id="w-address" type="text" placeholder="Binance UID or PayPal email"></div>
+        <div class="field"><label>Method</label>
+          <select id="w-method"><option>Binance</option><option>PayPal</option></select>
+        </div>
+        <button id="submit-w" class="btn">Submit Withdraw</button>
+        <div id="withdraw-msg" class="muted small"></div>
+      </section>
+
+      <section class="card records">
+        <h3>Earning Records</h3>
+        <div id="records-list" class="records-list"></div>
+      </section>
+
+      <section class="card refer">
+        <h3>Refer & Earn (20% UI)</h3>
+        <div class="field"><label>Your referral link</label>
+          <input id="ref-link" readonly></div>
+        <div class="muted small">Share this link. (Frontend demo — server required for real tracking)</div>
+      </section>
+
+      <footer class="card small muted">
+        © 2025 SEEBIRDEARN • Demo frontend. For production, set up a backend to verify Telegram login & process payouts.
+      </footer>
+    </main>
+  </div>
+
+<script src="app.js"></script>
+</body>
+</html>
